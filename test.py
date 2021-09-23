@@ -25,12 +25,12 @@ class Test:
                 print("Draw card")
                 self.player.hit_me(self.deck)
                 print(f'Player score: {self.player.count}')
-                self.player.draw_player_cards()
-                print("New deck")
-                self.test_show_deck()
+                self.player.print_player_cards()
+                #print("New deck")
+                #self.test_show_deck()
 
 
 test = Test()
 test.test_generate_deck()
-test.test_show_deck()
+#test.test_show_deck()
 test.test_draw_card()
