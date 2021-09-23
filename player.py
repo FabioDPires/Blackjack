@@ -1,6 +1,6 @@
 class Player:
     def __init__(self, is_dealer):
-        self.count = 0;
+        self.count = 0
         self.player_cards = []
         self.isDealer = is_dealer
 
@@ -14,7 +14,7 @@ class Player:
             card.print_card()
 
     def print_first_card(self):
-        card=self.player_cards[0]
+        card = self.player_cards[0]
         card.print_card()
 
     def calculate_player_score(self):
@@ -30,4 +30,4 @@ class Player:
             ace_counter -= 1
 
     def calculate_dealer_score_first_round(self):
-        self.count=self.player_cards[0].get_price()
+        self.count = self.player_cards[0].get_price()
