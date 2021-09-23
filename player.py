@@ -9,3 +9,7 @@ class Player:
         print(f' Drawn card - Suit: {drawn_card.suit} Value: {drawn_card.value}')
         self.player_cards.append(drawn_card)
         self.count += drawn_card.get_price()
+
+    def draw_player_cards(self):
+        for card in self.player_cards:
+            card.draw_card()

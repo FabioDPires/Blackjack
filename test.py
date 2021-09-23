@@ -15,21 +15,22 @@ class Test:
         self.deck.show_deck_card()
 
     def test_draw_card(self):
-        self.player.hit_me(self.deck)
+        draw = True
+        while draw:
+            print("Draw Card? Y or N")
+            response = input()
+            if response == 'N':
+                draw = False
+            else:
+                print("Draw card")
+                self.player.hit_me(self.deck)
+                print(f'Player score: {self.player.count}')
+                self.player.draw_player_cards()
+                print("New deck")
+                self.test_show_deck()
 
 
 test = Test()
 test.test_generate_deck()
 test.test_show_deck()
-draw = True
-
-while draw:
-    print("Draw Card? Y or N")
-    response = input()
-    if response == 'N':
-        draw = False
-    else:
-        print("Draw card")
-        test.test_draw_card()
-        print("New deck")
-        test.test_show_deck()
+test.test_draw_card()
