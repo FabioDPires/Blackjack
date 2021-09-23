@@ -21,5 +21,5 @@ class Card:
         print(f'|   {self.suit}   |')
         print('|       |')
         print(f'|    {self.value:>2} |')
-        print('└───────┘') 
+        print('└───────┘')
 
