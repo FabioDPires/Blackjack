@@ -1,3 +1,5 @@
+from pip._vendor.distlib.compat import raw_input
+
 from card import Card
 from player import Player
 from deck import Deck
@@ -88,11 +90,14 @@ class BlackJack:
             if self.dealer.count < 17:
                 time.sleep(3)
 
-
     @staticmethod
     def clear_screen():
         os.system('cls' if os.name == 'nt' else 'clear')
 
 
-blackjack = BlackJack()
-blackjack.play()
+play = True
+while play:
+    blackjack = BlackJack()
+    blackjack.play()
+    raw_input('Press enter to play again: ')
+    BlackJack.clear_screen()
