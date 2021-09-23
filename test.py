@@ -1,9 +1,12 @@
 from deck import Deck
+from player import Player
 
 
 class Test:
     def __init__(self):
         self.deck = Deck()
+        self.player = Player(False)
+        self.dealer = Player(True)
 
     def test_generate_deck(self):
         self.deck.fill_deck()
@@ -12,8 +15,7 @@ class Test:
         self.deck.show_deck_card()
 
     def test_draw_card(self):
-        card = self.deck.draw_card()
-        print(f' Drawn card - Suit: {card.suit} Value: {card.value}')
+        self.player.hit_me(self.deck)
 
 
 test = Test()
