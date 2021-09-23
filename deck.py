@@ -18,3 +18,7 @@ class Deck:
         for card in self.cards:
             print(f'|Suit: {card.suit} ,Value: {card.value}    |')
 
+    def draw_card(self):
+        drawn_card = self.cards[0]
+        self.cards.pop(0)
+        return drawn_card
