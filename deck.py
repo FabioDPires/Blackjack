@@ -1,4 +1,5 @@
 from card import Card
+import random
 
 
 class Deck:
@@ -11,6 +12,9 @@ class Deck:
                 card = Card(y + 1, x);
                 self.cards.append(card);
 
+        random.shuffle(self.cards)
+
     def show_deck_card(self):
         for card in self.cards:
             print(f'|Suit: {card.suit} ,Value: {card.value}    |')
+
