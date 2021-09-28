@@ -19,7 +19,7 @@ In this project I developed the Blackjack game using Python
    
 ## How To Play
 
-Just Git clone this project and run `python blackjack.py`
+Just Git clone this project and run `python blackjack.py` or click on BlackJack.exe
 
 ## Rules
 
