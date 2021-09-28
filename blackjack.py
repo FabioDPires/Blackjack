@@ -7,6 +7,21 @@ import os
 import time
 
 
+def show_instructions():
+    print("Both you and the dealer start with 2 cards each but you can only see the dealer's first card.")
+    print('You have the option to "stand" (not ask for another card) or "hit" (ask for another card in an attempt '
+          'to get closer to a count of 21, or even hit 21 exactly).')
+    print("Once your turn is over is the dealer's turn. The dealer's face-down card is turned up. If the total "
+          "is 17 or more, it must stand. If the total is 16 or under, a card must be taken.\nThe dealer must "
+          "continue to take cards until the total is 17 or more, at which point the dealer must stand.\nIf the "
+          "dealer has an ace, and counting it as 11 would bring the total to 17 or more (but not over 21), "
+          "the dealer must count the ace as 11 and stand.")
+    print("Both you and the dealer start with 2 cards each but you can only see the dealer's first card.")
+    print("Card values:")
+    print(" Ace - 1 or 11\n Face cards(Joker, Queen, King) - 10\n Others - its pip value.")
+    print("\n")
+
+
 class BlackJack:
     def __init__(self):
         self.deck = Deck()
@@ -95,9 +110,28 @@ class BlackJack:
         os.system('cls' if os.name == 'nt' else 'clear')
 
 
-play = True
-while play:
-    blackjack = BlackJack()
-    blackjack.play()
-    raw_input('Press enter to play again: ')
+blackJack = BlackJack()
+showMenu = True
+while showMenu:
+    print("Welcome. Select an option:")
+    print("1-Play")
+    print("2-Instructions")
+    print("3-Quit")
+    option = input()
     BlackJack.clear_screen()
+    if option == "1":
+        showMenu = False
+        play = True
+        while play:
+            blackjack = BlackJack()
+            blackjack.play()
+            raw_input('Press enter to play again: ')
+            BlackJack.clear_screen()
+    elif option == "2":
+        show_instructions()
+        raw_input('Press enter to go back: ')
+        BlackJack.clear_screen()
+    elif option == 3:
+        print("Quit")
+    else:
+        print("Invalid option")
