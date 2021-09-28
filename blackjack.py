@@ -1,3 +1,5 @@
+import sys
+
 from pip._vendor.distlib.compat import raw_input
 
 from card import Card
@@ -125,13 +127,16 @@ while showMenu:
         while play:
             blackjack = BlackJack()
             blackjack.play()
-            raw_input('Press enter to play again: ')
+            print("Press enter to play again or Q to quit to main menu")
+            if input() == "Q":
+                play = False
+                showMenu = True
             BlackJack.clear_screen()
     elif option == "2":
         show_instructions()
         raw_input('Press enter to go back: ')
         BlackJack.clear_screen()
     elif option == 3:
-        print("Quit")
+        sys.exit(0)
     else:
         print("Invalid option")
