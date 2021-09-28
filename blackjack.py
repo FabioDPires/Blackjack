@@ -136,7 +136,7 @@ while showMenu:
         show_instructions()
         raw_input('Press enter to go back: ')
         BlackJack.clear_screen()
-    elif option == 3:
+    elif option == "3":
         sys.exit(0)
     else:
         print("Invalid option")
